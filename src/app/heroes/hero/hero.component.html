@@ -1,0 +1,36 @@
+<h1>{{entidad}}</h1>
+
+<DL>
+<TD>Nombre:</TD>
+<dd>{{nombre}}</dd>
+
+<TD>Edad:</TD>
+<dd>{{edad}}</dd>
+
+<TD>Metodo:</TD>
+<dd>{{ 20*40 }}</dd>
+
+<TD>Capitalizado:</TD>
+<dd>{{capitalizado}}</dd>
+
+</DL>
+
+<button *ngIf="nombre=='Raul'"
+ (click)="changenHero()"
+   class="btn btn-primary mx-2">
+   Cambiar Nombre
+  </button>
+
+<button
+*ngIf="edad==43"
+(click)="changenEdad()"
+class="btn btn-primary">
+Cambiar Edad
+</button>
+
+<button
+
+(click)="resetForm()"
+class="btn btn-primary mx-2">
+Restableces
+</button>
