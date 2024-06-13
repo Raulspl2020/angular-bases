@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HeroComponent } from './heroes/hero/hero.component';
 import { ListaComponent } from './heroes/lista/lista.component';
 import { HeroesModule } from './heroes/heroes.module';
+import { DragonbzModule } from './dragonbz/dragonbz.module';
 
 
 
@@ -22,6 +23,7 @@ import { HeroesModule } from './heroes/heroes.module';
     AppRoutingModule,
     ContadorModulo,
     HeroesModule,
+    DragonbzModule
 
   ],
   providers: [],
