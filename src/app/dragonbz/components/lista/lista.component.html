@@ -1,10 +1,29 @@
 <p>lista works!</p>
-<h4>Listado</h4>
+<h4>LISTADO</h4>
     <ul class="list-group">
 
-      <li *ngFor="let character of charactarLista"
-          class="list-group-item">
-          {{character.nombre}} - <strong>Poder:</strong> {{character.poder}}
+      <li *ngFor="let character of charactarLista
+                  let i=index
+                  let primero=first;
+                  let ultimo=last;
+                  let par=even;
+                  let Inpar=odd;
+
+      "
+          class="list-group-item d-flex justify-content-between  align-items-center"
+          [ngClass]="{
+            'list-group-item-success': primero,
+            'list-group-item-info': ultimo,
+            }">
+
+         <div><span class="text-primary">  {{i+1}}.<strong>Nombre: </strong></span> {{character.nombre}} - <strong>Poder:</strong> {{character.poder}} - <strong>Edad:</strong> {{character.edad}}</div>
+
+          <button (click)="EliminaRegistro(character.id!)" class="btn btn-danger">X</button>
+
+         <!--<span>Es par: {{par}}</span>
+         <span>Es primero: {{primero}}</span>
+         <span>Es ultimo: {{ultimo}}</span>
+         <span>Es Impar: {{Inpar}}</span>-->
       </li>
 
     </ul>

@@ -5,15 +5,19 @@
 
 <div class="row">
   <div class="col">
+<!--LISTADO DE NOMBRE QUE RECIBE DEL NOMBRE-->
 
-<app-lista-lista [charactarLista]="characters"></app-lista-lista>
 
+<app-lista-lista [charactarLista]="DragonbzServicios.characters"
+                  (Eliminar)="DragonbzServicios.ElimninarRegistro($event)"></app-lista-lista>
 
 </div>
 
+
+
 <div class="col">
-  {{characters}}
-  <app-formulario></app-formulario>
+
+  <app-formulario (Nuevo)="DragonbzServicios.NuevoRegistro($event)"></app-formulario>
 
 </div>
 

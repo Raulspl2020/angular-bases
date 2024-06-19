@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { Character } from '../../interfaces/character.interface';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Variables1 } from '../../interfaces/character.interface';
 
 //aqui amarra todo el componente
 // este componente es llamado por un modulo
@@ -11,15 +11,28 @@ import { Character } from '../../interfaces/character.interface';
 export class ListaComponent {
 
   @Input()
-  public charactarLista: Character[]=[{// ESTE ES EL HIJO LA INFORMACION
+  public charactarLista: Variables1[]=[{// ESTE ES EL HIJO LA INFORMACION
     nombre:'Juan',
-    poder:3000
+    poder:3000,
+    edad:42
 },{
     nombre:'Pedro',
-    poder:9500
+    poder:9500,
+    edad:42
   },{
     nombre:'Carlos',
-    poder:2000
+    poder:2000,
+    edad:42
   }];
+
+    @Output()
+    public Eliminar:EventEmitter<string>= new EventEmitter();
+
+    EliminaRegistro(id?: string):void
+    {
+      if(!id) return;
+      console.log({id});
+      this.Eliminar.emit(id);
+    }
 
 }
